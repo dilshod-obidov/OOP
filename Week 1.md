@@ -1,4 +1,4 @@
-# Class Summary: OOP
+# Class Summary: Introduction
 
 ## Date: August 30, 2023
 ## Professor: Choonwoo Ryu
