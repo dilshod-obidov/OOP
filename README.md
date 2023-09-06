@@ -23,7 +23,7 @@ Week | Class Topic
 ---- | -----------
 1 | Introduction
 2 | Review of IGS1232
-3 | Extension of C, Reference
+3 | Pointers, Dynamic Memory Allocation
 4 | Basics of C++ classes (I)
 5 | Basics of C++ classes (II)
 6 | Copy constructor

@@ -1,0 +1,60 @@
+#include <iostream>
+
+using namespace std;
+
+void MatInput(int*, int, int);
+void MatMul(int*, int*, int*, int, int);
+void MatDisplay(int*, int, int);
+
+int main() {
+    int row = 3, col = 3;
+    int* mat1, * mat2, * matAdd;
+
+    // 1. allocate the memory buffers for the 3 matrices
+    mat1 = new int[row * col];
+    mat2 = new int[row * col];
+    matAdd = new int[row * col];
+
+    // 2. use the buffers
+    cout << "Enter elements in 1st matrix of size " << row << 'x' << col << ":\n";
+    MatInput(mat1, row, col);
+    cout << "Enter elements in 2nd matrix of size " << row << 'x' << col << ":\n";
+    MatInput(mat2, row, col);
+
+    MatMul(mat1, mat2, matAdd, row, col);
+
+    cout << "Multiplication of two matrices: \n";
+    MatDisplay(matAdd, row, col);
+
+    // 3. free the allocated buffers
+    delete[] mat1;
+    delete[] mat2;
+    delete[] matAdd;
+
+    return 0;
+}
+
+void MatInput(int* mat, int row, int col) {
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            cin >> mat[i * col + j];
+        }
+	}
+}
+void MatMul(int* mat1, int* mat2, int* matAdd, int row, int col) {
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+			matAdd[i * col + j] = 0;
+            for (int k = 0; k < col; k++) {
+				matAdd[i * col + j] += mat1[i * col + k] * mat2[k * col + j];
+			}
+		}
+	}
+}
+void MatDisplay(int* mat, int row, int col) {
+    for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++)
+			cout << mat[i * col + j] << ' ';
+		cout << '\n';
+	}
+}
