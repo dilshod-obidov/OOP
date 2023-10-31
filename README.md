@@ -1,6 +1,6 @@
 # Object Oriented Programming with C++
 Description:
-This reflective README documents my journey through the C++ Object-Oriented Programming (OOP) course. It explores how I applied course concepts, overcame challenges, and gained valuable insights.
+This reflective repository documents my journey through the C++ Object-Oriented Programming (OOP) course. It explores how I applied course concepts, overcame challenges, and gained valuable insights.
 
 ```cpp
 #include <iostream>
