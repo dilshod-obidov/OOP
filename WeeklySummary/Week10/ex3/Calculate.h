@@ -9,6 +9,9 @@ class Calculate{
     void func(double, char);
 public:
     Calculate(double value = 0) : m_value{value}{}
+    Calculate(const Calculate& copy){
+        m_value = copy.m_value;
+    }
     double getValue();
     double add(double);
     double substract(double);
