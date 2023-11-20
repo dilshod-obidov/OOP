@@ -37,9 +37,10 @@ public:
     const char* getName() const;
     void SetBalance(int);
     
-    void Deposit(int);
     void Withdraw(int);
     void ShowAccInfo(void);
+
+    virtual void Deposit(int);
 };
 
 #endif // _ACCOUNT_H_

@@ -16,11 +16,6 @@ const char* Account::getName() const{
 void Account::SetBalance(int money){
     m_balance = money;
 }
-void Account::Deposit(int money){
-    if(money > 0){
-        m_balance += money;
-    }
-}
 void Account::Withdraw(int money){
     if(money < 0 || money > m_balance){
         cout << "Not enough balance" << endl << endl;
@@ -34,4 +29,9 @@ void Account::ShowAccInfo(void){
     cout << "Account ID: " << m_accID << endl;
     cout << "Name: " << m_cusName << endl;
     cout << "Balance: " << m_balance << endl << endl;
+}
+void Account::Deposit(int money){
+    if(money > 0){
+        m_balance += money;
+    }
 }
