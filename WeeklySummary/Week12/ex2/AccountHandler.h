@@ -13,7 +13,8 @@ private:
     int m_accNum = 0;
 
     int GetAccIdx(int id) const;
-
+    bool Confirm(void) const;
+    
 public:
     AccountHandler();
     ~AccountHandler();
@@ -25,7 +26,6 @@ public:
     void ShowAllAccInfo(void) const;
     void DeleteAccount(void);
     void DeleteAllAcc(void);
-    bool Confirm(void) const;
     void SearchAcc(void) const;
 
 };
