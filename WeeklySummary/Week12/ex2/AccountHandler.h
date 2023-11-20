@@ -1,0 +1,33 @@
+#ifndef _ACCOUNTHANDLER_H_
+#define _ACCOUNTHANDLER_H_
+
+#include <iostream> 
+#include "Account.h"
+#include "bank.h"
+
+using namespace std;
+
+class AccountHandler{
+private:
+    Account* m_accArr[MAX_ACC_NUM];
+    int m_accNum = 0;
+
+    int GetAccIdx(int id) const;
+
+public:
+    AccountHandler();
+    ~AccountHandler();
+
+    void ShowMenu(void) const;
+    void MakeAccount(void) ;
+    void DepositMoney(void);
+    void WithdrawMoney(void);
+    void ShowAllAccInfo(void) const;
+    void DeleteAccount(void);
+    void DeleteAllAcc(void);
+    bool Confirm(void) const;
+    void SearchAcc(void) const;
+
+};
+
+#endif // _ACCOUNTHANDLER_H_
