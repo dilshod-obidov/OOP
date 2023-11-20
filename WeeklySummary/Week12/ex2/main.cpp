@@ -1,40 +1,44 @@
 // BANK PROJECT 0.4
 #include <iostream>
 #include "bank.h"
+#include "AccountHandler.h"
+
 using namespace std;
 
 int main(void) {
+	AccountHandler manager;
 	int choice;
+	bool run = true;
 
-	while (1) {
-		ShowMenu();
+	while (run) {
+		manager.ShowMenu();
 		cout << "Select menu: ";
 		cin >> choice;
 		cout << endl;
 
 		switch (bank(choice)) {
 		case bank::MAKE:
-			MakeAccount();
+			manager.MakeAccount();
 			break;
 		case bank::DEPOSIT:
-			DepositMoney();
+			manager.DepositMoney();
 			break;
 		case bank::WITHDRAW:
-			WithdrawMoney();
+			manager.WithdrawMoney();
 			break;
 		case bank::INQUIRE:
-			ShowAllAccInfo();
+			manager.ShowAllAccInfo();
 			break;
 		case bank::EXIT:
 			return 0;
 		case bank::DELETE:
-			DeleteAccount();
+			manager.DeleteAccount();
 			break;
 		case bank::DELETEALL:
-			DeleteAllAcc();
+			manager.DeleteAllAcc();
 			break;
 		case bank::SEARCHACC:
-			SearchAcc();
+			manager.SearchAcc();
 			break;
 		default:
 			cout << "Illegal selection.." << endl;

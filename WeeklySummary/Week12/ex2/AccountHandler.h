@@ -16,8 +16,11 @@ private:
     bool Confirm(void) const;
     
 public:
-    AccountHandler();
-    ~AccountHandler();
+    ~AccountHandler(){
+        for(int i=0; i<m_accNum; i++){
+            delete m_accArr[i];
+        }
+    }
 
     void ShowMenu(void) const;
     void MakeAccount(void) ;
