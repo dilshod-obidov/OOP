@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <cstring>
-#include "bank.h"
+#include "BankCommon.h"
 
 using namespace std;
 

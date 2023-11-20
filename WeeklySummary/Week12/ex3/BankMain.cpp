@@ -1,6 +1,6 @@
 // BANK PROJECT 0.4
 #include <iostream>
-#include "bank.h"
+#include "BankCommon.h"
 #include "AccountHandler.h"
 
 using namespace std;
