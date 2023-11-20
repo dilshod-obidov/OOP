@@ -6,7 +6,7 @@ const int NAME_LEN = 40;
 const int MAX_ACC_NUM = 100;
 
 void ShowMenu(void);
-void MakeAccount(void);
+void MakeAccount(void) ;
 void DepositMoney(void);
 void WithdrawMoney(void);
 void ShowAllAccInfo(void);

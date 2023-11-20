@@ -15,12 +15,21 @@ public:
         : m_accID{id}, m_balance{balance} {
             m_cusName = new char[NAME_LEN];
             strcpy(m_cusName, name); // for VScode on Linux
-            // strcpy_s(m_cuName, NAME_LEN, name) // for Visual Studio on Windows
+            // strcpy_s(m_cusName, NAME_LEN, name) // for Visual Studio on Windows
         }
+    // Deep Copy
+    Account(const Account& cp) 
+        : m_accID{cp.m_accID}, m_balance{cp.m_balance} {
+            m_cusName = new char[NAME_LEN];
+            strcpy(m_cusName, cp.m_cusName); // for VScode on Linux
+            // strcpy_s(m_cusName, NAME_LEN, cp.m_cusName) // for Visual Studio on Windows
+    }
+
     int getAccID() const;
     int getBalance() const;
     const char* getName() const;
     void SetBalance(int);
+    
     ~Account() {
         delete[]m_cusName;
     }
