@@ -1,5 +1,7 @@
 #include <iostream>
 #include "AccountHandler.h"
+#include "SavingAccount.h"
+#include "HighCreditAccount.h"
 
 using namespace std;
 
@@ -10,6 +12,18 @@ int AccountHandler::GetAccIdx(int id) const{
 		}
 	}
 	return -1;
+}
+
+bool AccountHandler::Confirm(void) const{
+	string ans;
+	cout << "Are you sure? (y/n) ";
+	cin >> ans;
+	if (ans == "y") {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 void AccountHandler::ShowMenu(void) const{
@@ -25,31 +39,29 @@ void AccountHandler::ShowMenu(void) const{
 }
 
 void AccountHandler::MakeAccount(void) {
-    int id;
-	char name[NAME_LEN];
-	int balance;
+	int choice;
 
 	if (m_accNum >= MAX_ACC_NUM) {
-		cout << "Sorry! cannot make an accout anymore." << endl;
+		cout << "Sorry! cannot make an account anymore." << endl;
 		return;
 	}
 
-	cout << "[Make Account]" << endl;
-	cout << "Account ID: ";
-	cin >> id;
-	cout << "Customer Name: ";
-	cin >> name;
-	cout << "Deposit amount: ";
-	cin >> balance;
-	cout << endl;
-
-	if (GetAccIdx(id) != -1) {
-		cout << "Error: Existing account ID" << endl;
-		return;
+	cout << "[Select Account Type]" << endl;
+	cout << "1. Saving Account" << endl;
+	cout << "2. High Credit Account" << endl;
+	cout << "Select: "; cin >> choice;
+	
+	if(choice == 1){
+		MakeSavingAccount();
 	}
+	else if(choice == 2){
+		MakeHighCreditAccount();
+	}
+	else cout << "Invalid Selection" << endl;
 
-	m_accArr[m_accNum] = new Account(id, balance, name);
-	m_accNum++;
+	//m_accArr[m_accNum] = new Account(id, balance, name);
+	//m_accNum++;
+
 }
 
 void AccountHandler::DepositMoney(void){
@@ -140,17 +152,6 @@ void AccountHandler::DeleteAllAcc(void){
 		return;
 	}
 }
-bool AccountHandler::Confirm(void) const{
-	string ans;
-	cout << "Are you sure? (y/n) ";
-	cin >> ans;
-	if (ans == "y") {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
 
 void AccountHandler::SearchAcc(void) const{
 		int id;
@@ -164,4 +165,46 @@ void AccountHandler::SearchAcc(void) const{
 		}
 		cout << "Name: " << m_accArr[idx]->getName() << endl;
 		cout << "Balance: " << m_accArr[idx]->getBalance() << endl << endl;
+}
+
+void AccountHandler::MakeSavingAccount(void){
+	int id;
+	int balance;
+	char* name;
+	int rate;
+
+	cout << "[Make Saving Account]" << endl;
+	cout << "Account ID: "; cin >> id;
+	if(GetAccIdx(id) == -1){
+		cout << "Error: Already Existing ID" << endl;
+		return;
+	}
+	cout << "Customer Name: "; cin >> name;
+	cout << "Deposit Amount: "; cin >> balance;
+	cout << "Interest Rate: "; cin >> rate;
+
+	m_accArr[m_accNum] = new SavingAccount{id, balance, name, rate};
+	m_accNum++;
+}
+
+void AccountHandler::MakeHighCreditAccount(void){
+	int id;
+	int balance;
+	char* name;
+	int rate;
+	int special;
+
+	cout << "[Make High Credit Account]" << endl;
+	cout << "Account ID: "; cin >> id;
+	if(GetAccIdx(id) == -1){
+		cout << "Error: Already Existing ID" << endl;
+		return;
+	}
+	cout << "Customer Name: "; cin >> name;
+	cout << "Deposit Amount: "; cin >> balance;
+	cout << "Interest Rate: "; cin >> rate;
+	cout << "Credit Rating(A:1, B:2, C:3): "; cin >> special;
+
+	m_accArr[m_accNum] = new HighCreditAccount{id, balance, name, rate, special};
+	m_accNum++;
 }

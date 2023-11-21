@@ -31,6 +31,9 @@ public:
     void DeleteAllAcc(void);
     void SearchAcc(void) const;
 
+    void MakeSavingAccount(void);
+	void MakeHighCreditAccount(void);
+
 };
 
 #endif // _ACCOUNTHANDLER_H_
