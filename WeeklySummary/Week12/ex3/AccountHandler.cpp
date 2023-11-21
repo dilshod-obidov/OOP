@@ -50,7 +50,7 @@ void AccountHandler::MakeAccount(void) {
 	cout << "1. Saving Account" << endl;
 	cout << "2. High Credit Account" << endl;
 	cout << "Select: "; cin >> choice;
-	
+	cout << endl;
 	if(choice == 1){
 		MakeSavingAccount();
 	}
@@ -204,6 +204,13 @@ void AccountHandler::MakeHighCreditAccount(void){
 	cout << "Deposit Amount: "; cin >> balance;
 	cout << "Interest Rate: "; cin >> rate;
 	cout << "Credit Rating(A:1, B:2, C:3): "; cin >> special;
+	if(special > 0 && special < 0){
+		int special_arr[7,4,2];
+		special = special_arr[special+1];
+	} else {
+		cout << "Invalid Selection" << endl;
+		return;
+	}
 
 	m_accArr[m_accNum] = new HighCreditAccount{id, balance, name, rate, special};
 	m_accNum++;
