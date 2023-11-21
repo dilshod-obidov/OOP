@@ -170,12 +170,12 @@ void AccountHandler::SearchAcc(void) const{
 void AccountHandler::MakeSavingAccount(void){
 	int id;
 	int balance;
-	char* name;
+	char name[NAME_LEN];
 	int rate;
 
 	cout << "[Make Saving Account]" << endl;
 	cout << "Account ID: "; cin >> id;
-	if(GetAccIdx(id) == -1){
+	if(GetAccIdx(id) != -1){
 		cout << "Error: Already Existing ID" << endl;
 		return;
 	}
@@ -190,13 +190,13 @@ void AccountHandler::MakeSavingAccount(void){
 void AccountHandler::MakeHighCreditAccount(void){
 	int id;
 	int balance;
-	char* name;
+	char name[NAME_LEN];
 	int rate;
 	int special;
 
 	cout << "[Make High Credit Account]" << endl;
 	cout << "Account ID: "; cin >> id;
-	if(GetAccIdx(id) == -1){
+	if(GetAccIdx(id) != -1){
 		cout << "Error: Already Existing ID" << endl;
 		return;
 	}
