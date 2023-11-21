@@ -102,8 +102,15 @@ void AccountHandler::WithdrawMoney(void){
 }
 
 void AccountHandler::ShowAllAccInfo(void) const{
+    int i = 0;
     for(int i=0; i<m_accNum; i++){
-        m_accArr[i]->ShowAccInfo();
+        if (m_accArr[i] != NULL) {
+            m_accArr[i]->ShowAccInfo();
+            i++;
+        }
+    }
+    if (i == 0) {
+        cout << "There is no existing account." << endl;
     }
 }
 
