@@ -12,5 +12,8 @@
         "type_traits": "cpp",
         "utility": "cpp",
         "iomanip": "cpp"
-    }
+    },
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ]
 }
