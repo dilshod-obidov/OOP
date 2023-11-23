@@ -1,6 +1,7 @@
 #include <iostream>
 
 #define MIN(p, q) ((p > q) ? p : q)
+#define POSITIVE(n) ((n < 0) ? -n : n)
 
 using namespace std;
 
@@ -8,10 +9,17 @@ class Fraction{
 private:
     int m_numerator;
     int m_denominator;
+
 public:
     Fraction(int numerator = 0, int denominator = 1){
+        // Negative values handler
+        if(denominator < 0){
+            numerator = -numerator;
+            denominator = -denominator;
+        }
+        
         // Simplifier
-        for(int i = MIN(numerator, denominator); i > 1; i--){
+        for(int i = MIN(POSITIVE(numerator), denominator); i > 1; i--){
             if(numerator % i == 0 && denominator % i == 0){
                 numerator /= i;
                 denominator /= i;
@@ -28,18 +36,6 @@ public:
 };
 
 ostream& operator<<(ostream& out, const Fraction& f){
-    // Simplifier
-    int numer = f.m_numerator, denom = f.m_denominator;
-    for(int i = MIN(numer, denom); i > 1; i--){
-        if(numer % i == 0 && denom % i == 0){
-            numer /= i;
-            denom /= i;
-            break;
-        }
-    }
-
-
-
     out << f.m_numerator << "/" << f.m_denominator; 
     return out;
 }
@@ -49,7 +45,8 @@ Fraction operator*(const Fraction& f1, const Fraction& f2){
 }
 
 int main(){
-    Fraction f1{ 1,2 }, f2{ 3,4 };
+    Fraction f1{ -1,2 }, f2{ 3,-4 };
+    
     cout << f1 << ", " << f2 << endl;
     cout << f1 * f2 << endl;
     cout << f1 * 2 << endl;
