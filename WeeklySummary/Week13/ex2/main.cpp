@@ -45,7 +45,7 @@ Fraction operator*(const Fraction& f1, const Fraction& f2){
 }
 
 int main(){
-    Fraction f1{ -1,2 }, f2{ 3,-4 };
+    Fraction f1{ 1,2 }, f2{ 3,4 };
     
     cout << f1 << ", " << f2 << endl;
     cout << f1 * f2 << endl;
