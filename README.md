@@ -22,17 +22,17 @@ This course teaches object-oriented programming (OOP) techniques to students who
 Week | Class Topic 
 ---- | -----------
 1 | Introduction
-2 | Review of IGS1232
-3 | Pointers, Dynamic Memory Allocation
-4 | Basics of C++ classes (I)
-5 | Basics of C++ classes (II)
-6 | Copy constructor
-7 | Friend and static
+2 | Pointers
+3 | Dynamic Memory Allocation
+4 | Reference
+5 | Basics of C++ classes (I)
+6 | Basics of C++ classes (II)
+7 | Copy constructor
 8 | Midterm Exam
-9 | Inheritance
-10 | Virtual
-11 | Operator Overloading (I)
-12 | Operator Overloading (II)
-13 | Template
-14 | Exceptions
+9 | Friend && Static
+10 | Inheritance
+11 | Virtual Fuctions
+12 | Virtual Constructors && Destructors
+13 | Operator Overloading (I)
+14 | Operator Overloading (II)
 15 | Final Exam
