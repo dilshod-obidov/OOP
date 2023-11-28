@@ -75,8 +75,8 @@
 
 **Arithmetic operators** (subset of binary operators):
 - +, -, *, /
-
-> *pos1* + *pos2* 
+   
+> *pos1* **+** *pos2* - (*operand* **operator** *operand*)
 >
 > **operator+**(*pos1*, *pos2*) 
 
