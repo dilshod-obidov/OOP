@@ -75,13 +75,15 @@
 
 **Arithmetic operators** (subset of binary operators):
 - +, -, *, /
-   
-> *pos1* **+** *pos2* - (*operand* **operator** *operand*)
->
-> **operator+**(*pos1*, *pos2*) 
+
+```
+pos1 + pos2
+
+operator+(pos1, pos2)
+```
 
 ### Three different implementations for operator overloading:
-- As a member function
+- As a [member function](https://github.com/dilshod-obidov/OOP/blob/main/WeeklySummary/Week13/Operator-Overloading-1/arithmetic_m.cpp)
 - As a [friend function](https://github.com/dilshod-obidov/OOP/blob/main/WeeklySummary/Week13/Operator-Overloading-1/arithmetic_f.cpp)
 - As a [normal function](https://github.com/dilshod-obidov/OOP/blob/main/WeeklySummary/Week13/Operator-Overloading-1/arithmetic_n.cpp)
 
@@ -115,7 +117,29 @@ Binary operator:
 Point p;
 std::cin >> p;
 ```
+
 ---
 
+## Overloading operators using member functions
+
+- Must be added as a member function of the **left operand**
+- The left operand becomes the implicit **this\*** object
+- All other operands become **function parameters**
+
+```
+pos1 + pos2 
+
+pos1.operator+(pos2)
+```
+
+### Operators that must be overloaded as a member function:
+- assignment `=`
+- subscript `[]`
+- function call `()`
+- member selection `->`
+
+### Operators that cannot be overloaded as a member function:
+- If the left operand is either not a class (e.g. int), or it is a class 
+that we can’t modify (e.g. std::ostream)
 
 
