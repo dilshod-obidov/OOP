@@ -89,7 +89,9 @@
 
 ## Overloading the I/O operators
 
-### Overloading operator<<
+> cannot be overloaded as a member function because the left operand is not a user-defined type
+
+### Overloading [operator<<](https://github.com/dilshod-obidov/OOP/blob/main/WeeklySummary/Week13/Operator-Overloading-1/iostream_f.cpp)
 
 Binary operator:   
 - The **left operand** is the std::cout object, and the **right operand** is user defined class   
@@ -97,11 +99,12 @@ Binary operator:
 > std::cout is an object of std::ostream
 
 ```cpp
-Point point{2, 3};
-std::cout << point;
+Point p{1, 2};
+std::cout << p;
 ```
+
 ---
-### Overloading operator>>
+### Overloading [operator>>](https://github.com/dilshod-obidov/OOP/blob/main/WeeklySummary/Week13/Operator-Overloading-1/iostream_f.cpp)
 
 Binary operator:   
 - The **left operand** is the std::cin object, and the **right operand** is user defined class   
@@ -109,8 +112,8 @@ Binary operator:
 > std::cin is an object of std::istream
 
 ```cpp
-Point point{};
-std::cin >> point;
+Point p;
+std::cin >> p;
 ```
 ---
 
