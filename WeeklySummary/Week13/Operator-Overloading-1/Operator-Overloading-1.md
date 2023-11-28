@@ -82,5 +82,37 @@
 
 ### Three different implementations for operator overloading:
 - As a member function
-- As a friend function
-- As a normal function
+- As a [friend function](https://github.com/dilshod-obidov/OOP/blob/main/WeeklySummary/Week13/Operator-Overloading-1/arithmetic_f.cpp)
+- As a [normal function](https://github.com/dilshod-obidov/OOP/blob/main/WeeklySummary/Week13/Operator-Overloading-1/arithmetic_n.cpp)
+
+---
+
+## Overloading the I/O operators
+
+### Overloading operator<<
+
+Binary operator:   
+- The **left operand** is the std::cout object, and the **right operand** is user defined class   
+
+> std::cout is an object of std::ostream
+
+```cpp
+Point point{2, 3};
+std::cout << point;
+```
+---
+### Overloading operator>>
+
+Binary operator:   
+- The **left operand** is the std::cin object, and the **right operand** is user defined class   
+
+> std::cin is an object of std::istream
+
+```cpp
+Point point{};
+std::cin >> point;
+```
+---
+
+
+
